@@ -1,0 +1,36 @@
+# ==================================================
+# docker-compose.yml - Development Setup
+# ==================================================
+
+# docker-compose.yml for development/testing
+#version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_mcp_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_server
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+
+volumes:
+  mysql_data:
+  ollama_data:
