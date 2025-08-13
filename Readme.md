@@ -46,19 +46,22 @@ Environment variable templates
 Requirements file for dependencies
 Usage examples and testing code
 
-# **Steps for building the MCP Implementation Project**
+# **MCP Implementation Project**
 In VS Code setup Python project structure as below 
 
 ```
--- data
-|
--- notebooks
-|
--- scripts
-|
--- results
-|
--- Readme.md
+|-- data
+|-- notebooks
+    |-- "all python notebooks"
+|-- scripts
+    |-- init.sql
+    |-- .env
+    |-- docker-compose.yml
+    |-- requirements.txt
+    |-- "all .py files"
+    |-- test_examples.py
+|-- results
+|-- Readme.md
 ```
 On the VS Code Terminal, create the python virtual environment
 ***Note*** Assuming that python3 is installed
@@ -129,3 +132,15 @@ The get prompt function handles the client request and shows the help-content to
 - The ***main.py** script
 This is the main entry point to initialize the MySQLMCPServer function of the MCP Server script.
 Code here is self-explanatory.
+
+## **Deployment using Docker**
+- The requirements.txt has all the dependencies required for this project.
+- The docker-compose.yml will be containerized deployment with mysql8 and ollama image running
+```
+docker compose up
+```
+If the init.sql is in the right path, it will also create the test_db and tables with data in it. If for some reason the init.sql is not found and initial schema is not available, this step can be manually perform using MySQL Workbench. 
+
+## **Testing the project**
+- The script folder has a python script ***test_examples.py*** for testing the project.
+Create a vscode testing project to execute the test. ***Note-*** You will have to download all the dependencies required for the test like pytest.
