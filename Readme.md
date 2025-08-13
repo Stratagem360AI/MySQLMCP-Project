@@ -60,6 +60,7 @@ In VS Code setup Python project structure as below
     |-- requirements.txt
     |-- "all .py files"
     |-- test_examples.py
+    |-- ollama_test.py
 |-- results
 |-- Readme.md
 ```
@@ -144,3 +145,15 @@ If the init.sql is in the right path, it will also create the test_db and tables
 ## **Testing the project**
 - The script folder has a python script ***test_examples.py*** for testing the project.
 Create a vscode testing project to execute the test. ***Note-*** You will have to download all the dependencies required for the test like pytest.
+
+## **Testing Ollama**
+- First ensure that ollama container is up and running.
+- Check if the following command lists any models
+```
+curl http://localhost:11434/api/tags
+```
+If no models are available, then run the following command.
+```
+docker exec -it <<container_ID>> ollama pull llama2
+```
+Once the model is successfully downloaded, run the ollama_test.py file to ensure that ollama is functioning properly.
