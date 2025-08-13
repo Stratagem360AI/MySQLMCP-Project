@@ -1,0 +1,12 @@
+# Database
+DB_HOST=localhost
+DB_NAME=bigdata
+DB_USER=root  
+DB_PASSWORD=
+
+# LLM (choose one)
+LLM_PROVIDER=openai
+LLM_API_KEY= #"API_KEY" 
+# OR
+LLM_PROVIDER=ollama
+LLM_BASE_URL=http://localhost:11434
