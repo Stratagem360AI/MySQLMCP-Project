@@ -4,11 +4,12 @@
 
 import asyncio
 import json
-from scripts.config import DatabaseConfig, LLMConfig
-from scripts.database import MySQLConnection
-from scripts.llm_client import create_llm_client
-from scripts.nlp import EnhancedNaturalLanguageProcessor
+from config import DatabaseConfig, LLMConfig
+from database import MySQLConnection
+from llm_client import create_llm_client
+from nlp import EnhancedNaturalLanguageProcessor
 import logging
+import types
 from typing import Dict, Any
 from mcp import ClientSession, StdioServerParameters
 from mcp.server import Server
@@ -373,6 +374,9 @@ What would you like to know about your database?
         await self.initialize()
         
         # Start the server
+        notification_options = types.NoneType  # Example: completion notifications
+        experimental_capabilities = {"myExperimentalFeature": True}
+
         async with stdio_server() as (read_stream, write_stream):
             await self.server.run(
                 read_stream,
@@ -381,9 +385,8 @@ What would you like to know about your database?
                     server_name="mysql-mcp-server",
                     server_version="2.0.0",
                     capabilities=self.server.get_capabilities(
-                        notification_options=None,
-                        experimental_capabilities=None
-                    )
+                        notification_options=notification_options,
+                        experimental_capabilities=experimental_capabilities)
                 )
             )
     

@@ -8,8 +8,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '..')))
 import logging
 from typing import Any, Dict, List, Optional
-from scripts.llm_client import LLMClient
-from scripts.database import MySQLConnection
+from llm_client import LLMClient
+from database import MySQLConnection
 
 # Configure logging
 logging.basicConfig(

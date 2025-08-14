@@ -14,7 +14,7 @@ from mysql.connector import Error
 
 logger = logging.getLogger(__name__)
 
-from scripts.config import DatabaseConfig
+from config import DatabaseConfig
 
 class MySQLConnection:
     """MySQL database connection handler"""

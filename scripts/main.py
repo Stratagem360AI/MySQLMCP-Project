@@ -18,6 +18,9 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+from config import DatabaseConfig, LLMConfig
+from server import MySQLMCPServer
+
 async def main():
     """Main function to run the enhanced MCP server"""
     

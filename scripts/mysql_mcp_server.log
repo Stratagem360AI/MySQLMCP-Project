@@ -1,0 +1,20 @@
+2025-08-14 10:06:23,732 - __main__ - ERROR - Error during testing: asyncio.run() cannot be called from a running event loop
+Traceback (most recent call last):
+  File "<ipython-input-17-a8fce396110c>", line 86, in <module>
+    asyncio.run(test_server())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 191, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2025-08-14 10:06:23,742 - __main__ - INFO - Testing completed
+2025-08-14 10:06:27,533 - __main__ - ERROR - Error during testing: asyncio.run() cannot be called from a running event loop
+Traceback (most recent call last):
+  File "<ipython-input-18-a8fce396110c>", line 86, in <module>
+    asyncio.run(test_server())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.5/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 191, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2025-08-14 10:06:27,544 - __main__ - INFO - Testing completed

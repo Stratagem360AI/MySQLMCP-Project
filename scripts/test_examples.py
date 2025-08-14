@@ -12,9 +12,9 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '..')))
 import asyncio
 import logging
 from config import DatabaseConfig, LLMConfig
-from scripts.server import MySQLMCPServer
+from server import MySQLMCPServer
 
-from scripts.main import main
+from main import main
 
 # Configure logging
 logging.basicConfig(
@@ -46,7 +46,7 @@ async def test_server():
     # Create server instance
     server = MySQLMCPServer(db_config, llm_config)
     await server.initialize()
-     #await asyncio.sleep(1)
+    await asyncio.sleep(1)
     print("Async task finished")
 
 
@@ -82,4 +82,4 @@ async def test_server():
 #        asyncio.run(test_server())
 
 if __name__ == "__main__":
-    asyncio.run(test_server())
+    asyncio.run(main())

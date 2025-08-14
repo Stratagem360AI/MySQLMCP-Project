@@ -11,7 +11,7 @@ import json
 import asyncio
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
-from scripts.config import LLMConfig
+from config import LLMConfig
 
 # Configure logging
 logging.basicConfig(
