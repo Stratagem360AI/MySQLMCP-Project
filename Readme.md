@@ -11,6 +11,8 @@ The code is now organized into logical modules:
 ***server.py*** - MCP server implementation with advanced tools
 ***main.py*** - Application entry point with proper error handling
 
+***Disclaimer*** - Some of the project aspects are ***"vibe-coded"***. The goal is to provide a conceptual understanding of MCP Server Implementation, rather than handing over thoroughly tested, production-ready code. With this disclaimer, please feel free to use it for training and understanding purposes only.
+
 # **🤖 LLM Integration Features**
 Multiple LLM Providers:
 
