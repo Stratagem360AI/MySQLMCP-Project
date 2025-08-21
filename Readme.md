@@ -4,11 +4,11 @@ To create a simple Model Context Protocol (MCP) server in Python that help you i
 # **🏗️Modular Architecture**
 The code is now organized into logical modules:
 
-***config.py*** - Configuration management with environment variable support
-***database.py*** - MySQL connection and operations with caching
-***llm_client.py*** - LLM integration supporting OpenAI and Ollama
-***nlp.py*** - Enhanced natural language processing using LLMs
-***server.py*** - MCP server implementation with advanced tools
+***config.py*** - Configuration management with environment variable support \
+***database.py*** - MySQL connection and operations with caching \
+***llm_client.py*** - LLM integration supporting OpenAI and Ollama \
+***nlp.py*** - Enhanced natural language processing using LLMs \
+***server.py*** - MCP server implementation with advanced tools \
 ***main.py*** - Application entry point with proper error handling
 
 ***Disclaimer*** - Some of the project aspects are ***"vibe-coded"***. The goal is to provide a conceptual understanding of MCP Server Implementation, rather than handing over thoroughly tested, production-ready code. With this disclaimer, please feel free to use it for training and understanding purposes only.
